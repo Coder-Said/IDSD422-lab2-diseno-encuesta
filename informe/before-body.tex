@@ -1,0 +1,66 @@
+\begin{titlepage}
+\centering
+
+\vspace*{0.5cm}
+
+\includegraphics[width=0.25\textwidth]{epn.png}
+
+\vspace{0.8cm}
+
+{\Large\textbf{ESCUELA POLITÉCNICA NACIONAL}\par}
+
+\vspace{0.3cm}
+$if(subtitle)$
+{\large $subtitle$\par}
+$endif$
+$if(carrera)$
+\vspace{0.15cm}
+{\normalsize $carrera$\par}
+$endif$
+
+\vspace{1.2cm}
+
+{\large\textbf{INFORME DE PRÁCTICA N.º $if(practica-nro)$$practica-nro$$endif$}\par}
+
+\vspace{0.4cm}
+
+$if(title)$
+{\LARGE\textbf{$title$}\par}
+$endif$
+
+\vspace{0.5cm}
+
+$if(topico-pea)$
+{\normalsize \textbf{Tópico del PEA:} $topico-pea$\par}
+\vspace{0.15cm}
+$endif$
+
+$if(asignatura)$
+{\normalsize \textbf{Asignatura:} $asignatura$\par}
+$endif$
+
+\vfill
+
+% Tabla de datos requerida por la plantilla oficial
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|p{0.32\textwidth}|p{0.60\textwidth}|}
+\hline
+\textbf{Estudiante(s)} & 
+$for(by-author)$
+  $by-author.name.literal$$if(by-author.github)$ -- usuario de GitHub: \texttt{$by-author.github$}$endif$ \newline
+$endfor$ \\ \hline
+\textbf{Docente} & $if(docente)$$docente$$endif$ \\ \hline
+\textbf{Período académico} & $if(periodo)$$periodo$$else$2026-B$endif$ \\ \hline
+\textbf{Fecha de entrega} & $if(date)$$date$$else$\today$endif$ \\ \hline
+\textbf{Repositorio (fork)} & $if(repositorio)$\url{https://$repositorio$}$endif$ \\ \hline
+\end{tabular}
+
+\vfill
+
+{\footnotesize \textit{Formato oficial de informes del curso IDSD422-$if(periodo)$$periodo$$else$2026-B$endif$}\par}
+\vspace{0.2cm}
+{\normalsize Quito -- Ecuador\par}
+
+\end{titlepage}
+
+\clearpage
